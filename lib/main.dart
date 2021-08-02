@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/CalcButton.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(CalcApp());
@@ -10,6 +11,7 @@ class CalcApp extends StatelessWidget {
   final int btnUIColorGray = 0xFF6C807F;
   final int btnUIColorWhite = 0xFFFFFFFF;
   final int greenTextColor = 0xFF65BDAC;
+  final int grayTextColor = 0xFF545F61;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,6 +21,34 @@ class CalcApp extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Container(
+              padding: EdgeInsets.only(right: 12),
+              child: Text(
+                '123*123',
+                style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontSize: 24,
+                    ),
+                    color: Color(greenTextColor)),
+              ),
+              alignment: Alignment(1, 1),
+            ),
+            Container(
+              padding: EdgeInsets.all(12),
+              child: Text(
+                '123',
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 48,
+                  ),
+                  color: Colors.white,
+                ),
+              ),
+              alignment: Alignment(1, 1),
+            ),
+            SizedBox(
+              height: 40,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -46,22 +76,18 @@ class CalcApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CalcButton(
-                  text: 'AC',
-                  fillColor: 0xFF6C807F,
+                  text: '7',
                 ),
                 CalcButton(
-                  text: 'C',
-                  fillColor: 0xFF6C807F,
+                  text: '8',
                 ),
                 CalcButton(
-                  text: '%',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '9',
                 ),
                 CalcButton(
-                  text: '/',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '*',
+                  fillColor: btnUIColorWhite,
+                  textColor: greenTextColor,
                 ),
               ],
             ),
@@ -69,22 +95,18 @@ class CalcApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CalcButton(
-                  text: 'AC',
-                  fillColor: 0xFF6C807F,
+                  text: '4',
                 ),
                 CalcButton(
-                  text: 'C',
-                  fillColor: 0xFF6C807F,
+                  text: '5',
                 ),
                 CalcButton(
-                  text: '%',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '6',
                 ),
                 CalcButton(
-                  text: '/',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '-',
+                  fillColor: btnUIColorWhite,
+                  textColor: greenTextColor,
                 ),
               ],
             ),
@@ -92,22 +114,18 @@ class CalcApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CalcButton(
-                  text: 'AC',
-                  fillColor: 0xFF6C807F,
+                  text: '1',
                 ),
                 CalcButton(
-                  text: 'C',
-                  fillColor: 0xFF6C807F,
+                  text: '2',
                 ),
                 CalcButton(
-                  text: '%',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '3',
                 ),
                 CalcButton(
-                  text: '/',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '+',
+                  fillColor: btnUIColorWhite,
+                  textColor: greenTextColor,
                 ),
               ],
             ),
@@ -115,20 +133,16 @@ class CalcApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CalcButton(
-                  text: 'AC',
-                  fillColor: 0xFF6C807F,
+                  text: '.',
                 ),
                 CalcButton(
-                  text: 'C',
-                  fillColor: 0xFF6C807F,
+                  text: '0',
                 ),
                 CalcButton(
-                  text: '%',
-                  fillColor: 0xFFFFFFFF,
-                  textColor: 0xFF65BDAC,
+                  text: '00',
                 ),
                 CalcButton(
-                  text: '/',
+                  text: '=',
                   fillColor: 0xFFFFFFFF,
                   textColor: 0xFF65BDAC,
                 ),

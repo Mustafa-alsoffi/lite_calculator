@@ -6,12 +6,14 @@ class CalcButton extends StatelessWidget {
   final int? fillColor;
   final int textColor;
   final double textSize;
+  final Function? callback;
   const CalcButton({
     Key? key,
     this.fillColor,
     required this.text,
     this.textColor = 0xFFFFFFFF,
     this.textSize = 20.00,
+    this.callback,
   }) : super(key: key);
 
   @override
@@ -25,7 +27,9 @@ class CalcButton extends StatelessWidget {
           child: Text(text,
               style: GoogleFonts.rubik(
                   textStyle: TextStyle(fontSize: 10), fontSize: textSize)),
-          onPressed: () {},
+          onPressed: () {
+            callback!(text);
+          },
           style: TextButton.styleFrom(
               backgroundColor: fillColor != null ? Color(fillColor!) : null,
               primary: Color(textColor),

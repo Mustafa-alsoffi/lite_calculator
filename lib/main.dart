@@ -45,9 +45,14 @@ class _CalcAppState extends State<CalcApp> {
   }
 
   void evaluate(String text) {
+    print('NOTICE: $text');
+    Parser p = Parser();
+    Expression exp = p.parse(_expression);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
     setState(() {
       _history = _expression;
-      _expression = 'Solved!';
+      _expression = eval.toString();
     });
   }
 
